@@ -11,10 +11,10 @@
 </p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-violet.svg)](./LICENSE)
-[![CI](https://github.com/ArnasDon/wacrm/actions/workflows/ci.yml/badge.svg)](https://github.com/ArnasDon/wacrm/actions/workflows/ci.yml)
+[![CI](https://github.com/preetamnaik3-cpu/wacrm/actions/workflows/ci.yml/badge.svg)](https://github.com/preetamnaik3-cpu/wacrm/actions/workflows/ci.yml)
+[![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://wacrm-vert-beta.vercel.app)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)](https://nextjs.org)
 [![Supabase](https://img.shields.io/badge/Supabase-Postgres%20%2B%20Auth-3ecf8e?logo=supabase)](https://supabase.com)
-[![Stars](https://img.shields.io/github/stars/ArnasDon/wacrm?style=social)](https://github.com/ArnasDon/wacrm/stargazers)
 
 The marketing site and self-host docs live in a separate repo:
 [ArnasDon/wacrm-site](https://github.com/ArnasDon/wacrm-site)

@@ -5,6 +5,7 @@ on:
     branches: [main]
   push:
     branches: [main]
+  workflow_dispatch:
 
 # Cancel older CI runs for the same branch when a new commit arrives —
 # saves minutes when someone pushes a stack of fixes to one PR.
@@ -51,3 +52,19 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  # Continuous delivery is handled by the Vercel Git integration
+  # (project: wacrm on team pritam2k4s-projects). Every push to main
+  # and every PR gets a deployment automatically — no extra secrets
+  # needed in this repo.
+  cd-status:
+    name: CD (Vercel)
+    runs-on: ubuntu-latest
+    needs: check
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Confirm production deploy target
+        run: |
+          echo "CI passed. Vercel will deploy https://github.com/${{ github.repository }}@${{ github.sha }}"
+          echo "Production URL: https://wacrm-vert-beta.vercel.app"
+          echo "Dashboard: https://vercel.com/pritam2k4s-projects/wacrm"
