@@ -612,6 +612,15 @@ async function processMessage(
   })
 
   if (msgError) {
+    // Meta retries webhooks — a duplicate message_id is a successful
+    // no-op, not a failure worth re-delivering for.
+    if (msgError.code === '23505') {
+      console.info(
+        '[webhook] duplicate message_id ignored:',
+        message.id,
+      )
+      return
+    }
     console.error('Error inserting message:', msgError)
     return
   }
